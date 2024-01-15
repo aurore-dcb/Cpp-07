@@ -1,27 +1,25 @@
-NAME =	ex02
+NAME = ex02
+SRC = main.cpp
+OBJ_DIR = objects
+OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:%.cpp=%.o))
+CC = c++
+FLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
-SRC =	main.cpp
+all: $(NAME)
 
-OBJ		= ${SRC:%.cpp=objects/%.o}
+$(NAME): $(OBJ) Array.hpp
+	$(CC) $(FLAGS) -o $@ $(OBJ)
 
-CC		= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98
-
-${NAME}: ${OBJ} *.hpp
-		 ${CC} ${FLAGS} -o ${NAME} ${OBJ}
-
-objects/%.o: %.cpp
-			mkdir -p $(dir $@)
-			${CC} ${FLAGS} -c -o $@ $^
-
-all:	${NAME}
+$(OBJ_DIR)/%.o: %.cpp
+	mkdir -p $(OBJ_DIR)
+	$(CC) $(FLAGS) -c -o $@ $<
 
 clean:
-		rm -rf objects
+	rm -rf $(OBJ_DIR)
 
-fclean:	clean
-		rm -rf ${NAME}
+fclean: clean
+	rm -f $(NAME)
 
-re:		fclean all
+re: fclean all
 
 .PHONY: clean fclean all re
