@@ -9,14 +9,15 @@ int main(int, char**)
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
     srand(time(NULL));
-    // std::cout << "TAILLE:" << numbers.size() << std::endl;
     for (int i = 0; i < MAX_VAL; i++)
     {
-        // std::cout << "i=" << i << std::endl;
         const int value = rand();
-        // std::cout << "value:" << value << std::endl; 
         numbers[i] = value;
         mirror[i] = value;
+    }
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        std::cout << "num[i] = " << numbers[i] << std::endl;
     }
     //SCOPE
     {

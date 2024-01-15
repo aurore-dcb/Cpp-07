@@ -1,5 +1,6 @@
 NAME = ex02
-SRC = main.cpp
+# SRC = main.cpp
+SRC = mymain.cpp
 OBJ_DIR = objects
 OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:%.cpp=%.o))
 CC = c++

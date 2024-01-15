@@ -1,7 +1,6 @@
 
 template <typename T>
 Array<T>::Array( void ) {
-    // _tab = new T[0];
     _tab = NULL;
 }
 
@@ -16,14 +15,13 @@ Array<T>::Array( unsigned int n ) {
 
 template <typename T>
 Array<T>::~Array( void ) {
-    if (_tab)
+    if (_tab) {
         delete[] _tab;
-    std::cout << "Destructor of Array called." << std::endl;
+    }
 }
 
 template <typename T>
 Array<T>::Array(const Array& cpy) {
-    // *this = cpy;
     if (cpy._tab) {
         _n = cpy._n;
         _tab = new T[_n];
@@ -57,13 +55,15 @@ T& Array<T>::operator[](unsigned int i) {
     if (i < 0 || i >= _n) {
         throw std::out_of_range("Index out of range");
     }
-    // std::cout << "I=" << i << std::endl;
-    // std::cout << "_tab[i]" << _tab[i] << std::endl;
-    // std::cout << "I=" << i << std::endl;
     return _tab[i];
 }
 
 template <typename T>
 unsigned int Array<T>::size( void ) const {
     return _n;
+}
+
+template <typename T>
+T * Array<T>::getTab( void ) {
+    return _tab;
 }
