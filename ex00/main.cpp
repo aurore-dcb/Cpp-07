@@ -45,7 +45,8 @@ int main()
         std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
     }
     {
-        std::cout << std::endl << "#---------- Complex tests ----------#" << std::endl << std::endl;
+        std::cout << std::endl << "#---------- More tests ----------#" << std::endl << std::endl;
+        // appels des templates de fonctions avec des classes 
         Test a(127);
         Test b(-0);
         std::cout << "a = " << a << ", b = " << b << std::endl;

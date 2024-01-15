@@ -1,10 +1,10 @@
 NAME = ex02
-# SRC = main.cpp
-SRC = mymain.cpp
+SRC = main.cpp
+# SRC = mymain.cpp
 OBJ_DIR = objects
 OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:%.cpp=%.o))
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98 -g3
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 

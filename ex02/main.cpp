@@ -15,10 +15,6 @@ int main(int, char**)
         numbers[i] = value;
         mirror[i] = value;
     }
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        std::cout << "num[i] = " << numbers[i] << std::endl;
-    }
     //SCOPE
     {
         Array<int> tmp = numbers;

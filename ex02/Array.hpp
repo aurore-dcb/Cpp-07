@@ -14,8 +14,6 @@ class Array {
         T& operator[](unsigned int i);
         unsigned int size( void ) const;
 
-        T * getTab( void );
-
     private :
         T * _tab;
         unsigned int _n;

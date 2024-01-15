@@ -62,8 +62,3 @@ template <typename T>
 unsigned int Array<T>::size( void ) const {
     return _n;
 }
-
-template <typename T>
-T * Array<T>::getTab( void ) {
-    return _tab;
-}

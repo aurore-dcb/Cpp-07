@@ -7,8 +7,8 @@ void displayArray(const T& elem) {
     std::cout << elem << std::endl;
 }
 
-template< typename T, typename F >
-void iter(T * array, size_t len, F fct) {
+template< typename T , typename F >
+void iter(T * array, size_t len, F * fct) {
     for (size_t i = 0 ; i < len ; i++) {
         fct(array[i]);
     }
